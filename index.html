@@ -1,56 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="shortcut icon" href="favicon.ico"/>
-<style>
-    body {
-        font-size: 16px;
-        padding: 0 20px;
-        margin: 25px auto;
-        max-width: 680px; 
-        font-family: 'Lucida Grande', helvetica, arial, verdana, sans-serif;
-        font-size: 90%;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>Roadrunner Capital</title>
+    <style>
+        body {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Lucida Grande', helvetica, arial, verdana, sans-serif;
+        }
 
-    ul {
-        margin-top: 0px;
-    }
+        #content {
+            text-align: center;
+        }
 
-    #content {
-        max-width: 40em;
-        margin: 15 auto;
-        margin-top: 40px;
-    }
+        #title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    h2 {
-        margin-bottom: 0px;
-    }
+        #title svg {
+            margin-right: 10px;
+        }
 
-    #title {
-        display: flex;
-        align-items: center;
-    }
+        #name {
+            font-size: 20px;
+        }
 
-    #title svg {
-        margin-right: 20px;
-    }
-    #name {
-        font-size: 20px;
-    }
-</style>
-<title>Roadrunner Capital</title>
+        p a {
+            color: #3498db;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<div id="content">
-
-<div id="title">
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M40 0C41.2696 0 42.2989 1.02923 42.2989 2.29885V2.75862V2.84983C42.2994 9.15821 42.3672 17.7764 46.6262 24.869C50.7517 31.7397 59.1789 37.7011 77.2414 37.7011H77.7011C78.9706 37.7011 80 38.7304 80 40C80 41.2696 78.9706 42.2989 77.7011 42.2989H77.2414H77.2331C59.1816 42.3007 50.7545 48.2933 46.6271 55.1825C42.3668 62.2943 42.2994 70.9154 42.2989 77.1503V77.2414V77.7011C42.2989 78.9706 41.2696 80 40 80C38.7304 80 37.7011 78.9706 37.7011 77.7011V77.2414V77.1503C37.7006 70.9154 37.6332 62.2943 33.3728 55.1825C29.2467 48.2952 20.8237 42.3045 2.784 42.2989H2.29885C1.02923 42.2989 0 41.2696 0 40C0 38.7304 1.02923 37.7011 2.29885 37.7011H2.75862C20.8213 37.7011 29.2484 31.7397 33.374 24.869C37.6333 17.7756 37.7006 9.15623 37.7011 2.84765V2.75862V2.29885C37.7011 1.02923 38.7304 0 40 0ZM39.7701 51.954C46.4993 51.954 51.954 46.4993 51.954 39.7701C51.954 33.0411 46.4993 27.5862 39.7701 27.5862C33.0411 27.5862 27.5862 33.0411 27.5862 39.7701C27.5862 46.4993 33.0411 51.954 39.7701 51.954Z"></path></svg>
-        <span id="name">Roadrunner Capital</span>
-</div>        
-<!-- 
-<p>Roadrunner Capital is an early stage deeptech venture capital fund run by <a href="https://www.linkedin.com/in/adam-hammer-4b594969/" target="_blank">Adam Hammer</a> (computing and materials) and <a href="https://www.linkedin.com/in/mettler/" target="_blank">Mike Mettler</a> (energy and climate). We invest $250k-$1m and love being the first check.</p>
-<p>If you're a founder but aren't ready for venture capital yet: <a href="https://roadrunnerventurestudios.com/" target="_blank">Roadrunner Studios</a> can pay salary, fund R&D, write grants, help recruit, and bring first customers.</p>
--->
-<p><a href="https://forms.gle/6DrvAdvUHiL6DeU3A" target="_blank">contact us</a></p>
-</div>
+    <div id="content">
+        <div id="title">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="black" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 0C41.2696 0 42.2989 1.02923 42.2989 2.29885V2.75862V2.84983C42.2994 9.15821 42.3672 17.7764 46.6262 24.869C50.7517 31.7397 59.1789 37.7011 77.2414 37.7011H77.7011C78.9706 37.7011 80 38.7304 80 40C80 41.2696 78.9706 42.2989 77.7011 42.2989H77.2414H77.2331C59.1816 42.3007 50.7545 48.2933 46.6271 55.1825C42.3668 62.2943 42.2994 70.9154 42.2989 77.1503V77.2414V77.7011C42.2989 78.9706 41.2696 80 40 80C38.7304 80 37.7011 78.9706 37.7011 77.7011V77.2414V77.1503C37.7006 70.9154 37.6332 62.2943 33.3728 55.1825C29.2467 48.2952 20.8237 42.3045 2.784 42.2989H2.29885C1.02923 42.2989 0 41.2696 0 40C0 38.7304 1.02923 37.7011 2.29885 37.7011H2.75862C20.8213 37.7011 29.2484 31.7397 33.374 24.869C37.6333 17.7756 37.7006 9.15623 37.7011 2.84765V2.75862V2.29885C37.7011 1.02923 38.7304 0 40 0ZM39.7701 51.954C46.4993 51.954 51.954 46.4993 51.954 39.7701C51.954 33.0411 46.4993 27.5862 39.7701 27.5862C33.0411 27.5862 27.5862 33.0411 27.5862 39.7701C27.5862 46.4993 33.0411 51.954 39.7701 51.954Z"></path>
+            </svg>
+            <span id="name">Roadrunner Capital</span>
+        </div>        
+    </div>
 </body>
 </html>
+
