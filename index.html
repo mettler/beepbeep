@@ -19,12 +19,15 @@
 
         #content {
             text-align: center;
+            /* Optional: Add a max-width if you want to constrain the listings */
+            /* max-width: 400px; */
         }
 
         #title {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px; /* Added spacing below the logo */
         }
 
         #title svg {
@@ -33,6 +36,17 @@
 
         #name {
             font-size: 20px;
+        }
+
+        #portfolio {
+            text-align: left; 
+            display: inline-block;
+            width: 100%; 
+            padding-left:40px;
+        }
+        
+        #portfolio div {
+            margin-bottom: 5px; 
         }
     </style>
 </head>
@@ -44,7 +58,12 @@
             </svg>
             <span id="name">Roadrunner Capital</span>
         </div>        
+        <div id="portfolio">
+            <div><a href="https://www.halomaterials.com/" target="_blank">Halo Materials</a></div>
+            <div><a href="https://path-power.com/" target="_blank">Path Power</a></div>
+            <div><a href="https://www.perseusmaterials.com/" target="_blank">Perseus Materials</a></div>
+            <div><a href="https://www.thunderstone.rocks/" target="_blank">Thunderstone</a></div>                 
+        </div>
     </div>
 </body>
 </html>
-
