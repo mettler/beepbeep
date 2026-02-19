@@ -1,69 +1,175 @@
-<!-- this website was written by humans, we use our tokens on other stuff -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico"/>
     <title>Roadrunner Capital</title>
     <style>
-        body {
-            font-size: 16px;
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --grid-line: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .container {
+            display: flex; 
+            flex-direction: column;
+            width: 100%;
+            max-width: 100%;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--grid-line);
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-family: 'Lucida Grande', helvetica, arial, verdana, sans-serif;
+            gap: 1.5rem;
+            background-color: var(--bg-color);
         }
 
-        #content {
-            text-align: center;
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+            display: block;
+            fill: var(--text-color);
         }
 
-        #title {
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        /* --- PORTFOLIO LIST --- */
+        .portfolio-list {
+            list-style: none;
+        }
+
+        .portfolio-item {
+            border-bottom: 1px solid var(--grid-line);
+        }
+
+        .portfolio-link {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            padding-left: 3.8rem;
+            padding-right: 2rem; /* Added padding so the arrow has breathing room */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            font-weight: 400;
+            transition: background-color 0.2s ease;
         }
 
-        #title svg {
-            margin-right: 10px;
+        .portfolio-link:hover {
+            background-color: #fff;
         }
 
-        #name {
-            font-size: 20px;
+        /* The Arrow Element */
+        .portfolio-link::after {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-10px); /* Starts slightly to the left */
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
-        #portfolio {
-            text-align: left; 
-            display: inline-block;
-            width: 100%; 
-            padding-left:40px;
+        /* Arrow Hover State */
+        .portfolio-link:hover::after {
+            opacity: 1;
+            transform: translateX(0); /* Slides into place */
         }
-        
-        #portfolio div {
-            margin-bottom: 5px; 
+
+        .portfolio-index {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            color: #999;
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+
+        /* --- DESKTOP LAYOUT (40/60 Split) --- */
+        @media (min-width: 900px) {
+            .container {
+                flex-direction: row; 
+            }
+
+            .header {
+                width: 40%;
+                border-bottom: none; 
+                align-self: flex-start; 
+                position: sticky;
+                top: 0;
+            }
+
+            main {
+                width: 60%;
+                border-left: 1px solid var(--grid-line); 
+                min-height: 100vh;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="content">
-        <div id="title">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="black" xmlns="http://www.w3.org/2000/svg">
+    <div class="container">
+        <header class="header">
+            <svg class="logo-svg" width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40 0C41.2696 0 42.2989 1.02923 42.2989 2.29885V2.75862V2.84983C42.2994 9.15821 42.3672 17.7764 46.6262 24.869C50.7517 31.7397 59.1789 37.7011 77.2414 37.7011H77.7011C78.9706 37.7011 80 38.7304 80 40C80 41.2696 78.9706 42.2989 77.7011 42.2989H77.2414H77.2331C59.1816 42.3007 50.7545 48.2933 46.6271 55.1825C42.3668 62.2943 42.2994 70.9154 42.2989 77.1503V77.2414V77.7011C42.2989 78.9706 41.2696 80 40 80C38.7304 80 37.7011 78.9706 37.7011 77.7011V77.2414V77.1503C37.7006 70.9154 37.6332 62.2943 33.3728 55.1825C29.2467 48.2952 20.8237 42.3045 2.784 42.2989H2.29885C1.02923 42.2989 0 41.2696 0 40C0 38.7304 1.02923 37.7011 2.29885 37.7011H2.75862C20.8213 37.7011 29.2484 31.7397 33.374 24.869C37.6333 17.7756 37.7006 9.15623 37.7011 2.84765V2.75862V2.29885C37.7011 1.02923 38.7304 0 40 0ZM39.7701 51.954C46.4993 51.954 51.954 46.4993 51.954 39.7701C51.954 33.0411 46.4993 27.5862 39.7701 27.5862C33.0411 27.5862 27.5862 33.0411 27.5862 39.7701C27.5862 46.4993 33.0411 51.954 39.7701 51.954Z"></path>
             </svg>
-            <span id="name">Roadrunner Capital</span>
-        </div>        
-        <div id="portfolio">
-            <div><a href="https://www.halomaterials.com/" target="_blank">Halo Materials</a></div>
-            <div><a href="https://heatflow.io/" target="_blank">HeatFlow</a></div>
-            <div><a href="https://path-power.com/" target="_blank">Path Power</a></div>
-            <div><a href="https://www.perseusmaterials.com/" target="_blank">Perseus Materials</a></div>
-            <div><a href="https://www.thunderstone.rocks/" target="_blank">Thunderstone</a></div>                 
-        </div>
+            <h1>Roadrunner Capital</h1>
+        </header>
+
+        <main>
+            <ul class="portfolio-list">
+                <li class="portfolio-item">
+                    <a href="https://halomaterials.com" class="portfolio-link" target="_blank">
+                        <span>Halo Materials</span>
+                    </a>
+                </li>
+                <li class="portfolio-item">
+                    <a href="https://heatflow.io/" class="portfolio-link" target="_blank">
+                        <span>HeatFlow</span>
+                    </a>
+                </li>
+                <li class="portfolio-item">
+                    <a href="https://path-power.com" class="portfolio-link" target="_blank">
+                        <span>Path Power</span>
+                    </a>
+                </li>
+                <li class="portfolio-item">
+                    <a href="https://perseusmaterials.com" class="portfolio-link" target="_blank">
+                        <span>Perseus Materials</span>
+                    </a>
+                </li>
+                <li class="portfolio-item">
+                    <a href="https://thunderstone.rocks" class="portfolio-link" target="_blank">
+                        <span>Thunderstone</span>
+                    </a>
+                </li>
+            </ul>
+        </main>
     </div>
 </body>
 </html>
